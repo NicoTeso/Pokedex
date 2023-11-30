@@ -1,0 +1,14 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-02-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <template for:each={Pokemones__c} for:item="poke">
+        <div key={poke.id}>
+            <c-pokemon pokemon=""></c-pokemon>
+        </div>
+    </template>
+</template>

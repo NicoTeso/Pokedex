@@ -1,0 +1,39 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-07-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+
+<template>
+  <lightning-card title="Filtro de Busqueda:">
+      <div class=“slds-m-around_medium”>
+          <lightning-input type=“text” value={searchKey} label="Nombre Pokemon" onchange={handleSearch}></lightning-input>
+          <lightning-combobox label = "Elige Tipo" value ={selectedType} options ={typeOptions} onchange ={handleTypeChange}></lightning-combobox>
+          <lightning-input type=“text” value ={selectedGeneration} label=“Generacion” onchange={handleGenerationChange}></lightning-input>
+      </div>
+      <div class="slds-m-around_medium">
+        <lightning-button-group>
+            <lightning-button label="Agregar a Entrenador" onclick={handleAddToTrainer}></lightning-button>
+        </lightning-button-group>
+    </div>
+      <lightning-datatable
+          key-field=“id”
+          data={filteredPokemon}
+          columns={columns}
+          onrowselection={handleRowSelection}>
+      </lightning-datatable>
+      <div class="slds-m-around_medium">
+        <lightning-button-group>
+            <lightning-button label="Previous" onclick={handlePrevious} ></lightning-button>
+            <lightning-button label="Next" onclick={handleNext} ></lightning-button>
+        </lightning-button-group>
+    </div>
+    </lightning-card>
+</template>
+
+
+
+
+
